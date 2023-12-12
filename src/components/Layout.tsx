@@ -7,7 +7,11 @@ export default function Layout() {
     <div className="flex flex-col h-full">
       <header className="flex justify-between items-center p-4 bg-slate-200">
         <Link to="/">
-          <img src="src/assets/logo.png" alt="vanlife logo" className="w-32" />
+          <img
+            src="/src/assets/logo.png"
+            alt="vanlife logo"
+            className="w-32 hover:scale-x-105 transition-all"
+          />
         </Link>
         <nav className="flex justify-between gap-3 font-bold">
           {pages.map((page) => (

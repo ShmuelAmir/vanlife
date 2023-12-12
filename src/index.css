@@ -23,6 +23,6 @@
       rgba(0, 0, 0, 0.46) 0%,
       rgba(0, 0, 0, 0.46) 100%
     ),
-    url("src/assets/hero.png"),
+    url("/src/assets/hero.png"),
     lightgray 0px -65.191px / 100% 178.109% no-repeat;
 }

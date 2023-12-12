@@ -6,9 +6,9 @@ export default function About() {
           height: "25vh",
           backgroundImage: "url(/src/assets/about.png)",
         }}
-        className="bg-center"
+        className="bg-center bg-no-repeat"
       />
-      <div className="p-10">
+      <div className="p-10 max-w-2xl mx-auto">
         <h2 className="text-3xl font-bold mb-6">
           Don’t squeeze in a sedan when you could relax in a van.
         </h2>
