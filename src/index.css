@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, sans-serif;
+}
+
+#root {
+  height: 100vh;
+}
+
+.bg-image {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.46) 0%,
+      rgba(0, 0, 0, 0.46) 100%
+    ),
+    url("src/assets/hero.png"),
+    lightgray 0px -65.191px / 100% 178.109% no-repeat;
+}
