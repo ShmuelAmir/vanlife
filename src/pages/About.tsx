@@ -4,7 +4,8 @@ export default function About() {
       <div
         style={{
           height: "25vh",
-          backgroundImage: "url(/src/assets/about.png)",
+          backgroundImage:
+            "url(https://visit2israel.com/wp-content/uploads/2023/04/tommy-lisbin-xr-y6Ruw7K8-unsplash.webp)",
         }}
         className="bg-center bg-no-repeat"
       />

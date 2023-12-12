@@ -8,7 +8,7 @@ export default function Layout() {
       <header className="flex justify-between items-center p-4 bg-slate-200">
         <Link to="/">
           <img
-            src="/src/assets/logo.png"
+            src="/src/assets/logo.svg"
             alt="vanlife logo"
             className="w-32 hover:scale-x-105 transition-all"
           />

@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-image h-full bg-cover bg-center text-white p-10 filter bg-slate-600">
       <div className="max-w-xl mx-auto">
@@ -9,7 +13,10 @@ export default function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <button className="bg-[#FF8C38] w-full  p-2 rounded-md mt-20">
+        <button
+          onClick={() => navigate("/vans")}
+          className="bg-[#FF8C38] w-full  p-2 rounded-md mt-20"
+        >
           Find your van
         </button>
       </div>
