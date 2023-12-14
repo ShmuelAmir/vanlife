@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Van } from "../types/Van";
 
 function useVansToDisplay() {
-  const [params] = useSearchParams({ type: "all" });
+  const [params] = useSearchParams();
 
   const {
     data: vans,
@@ -19,10 +19,10 @@ function useVansToDisplay() {
         .then((data) => data.vans) as Promise<Van[]>,
   });
 
-  const type = params.get("type") || "all";
+  const type = params.get("type");
 
   const vansToDisplay = useMemo(() => {
-    if (type === "all") return vans;
+    if (!type) return vans;
     return vans?.filter((van) => van.type === type);
   }, [type, vans]);
 

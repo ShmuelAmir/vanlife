@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { useSearchParams } from "react-router-dom";
+import clsx from "clsx";
 
 const buttons = [
   { type: "simple", color: "#E17654" },
@@ -8,8 +8,8 @@ const buttons = [
 ];
 
 function Filters() {
-  const [params, setParams] = useSearchParams({ type: "all" });
-  const type = params.get("type") || "all";
+  const [params, setParams] = useSearchParams();
+  const type = params.get("type");
 
   return (
     <div className="flex justify-between items-center mt-5 mb-12">
@@ -31,7 +31,7 @@ function Filters() {
       </div>
       <span
         className="text-slate-500 underline cursor-pointer hover:text-slate-700"
-        onClick={() => setParams({ type: "all" })}
+        onClick={() => setParams()}
       >
         Clear filters
       </span>
