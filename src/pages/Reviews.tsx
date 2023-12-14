@@ -1,6 +1,6 @@
 function Reviews() {
   return (
-    <div>
+    <div className=" max-w-xl mx-auto">
       <h1>Reviews</h1>
     </div>
   );

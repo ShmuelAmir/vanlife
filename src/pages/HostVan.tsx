@@ -8,7 +8,7 @@ const vanPages = ["details", "pricing", "photos"];
 
 function HostVan() {
   return (
-    <div className="pt-8">
+    <div className="pt-8 max-w-xl mx-auto">
       <Link
         to=".."
         relative="path"
