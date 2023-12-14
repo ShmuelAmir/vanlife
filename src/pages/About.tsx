@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function About() {
   return (
     <div>
@@ -26,9 +28,12 @@ function About() {
           <p className="text-2xl font-bold">
             Your destination is waiting. <br /> Your van is ready.
           </p>
-          <button className="mt-4 rounded-md bg-slate-900 px-6 py-3 text-white">
+          <Link
+            to="/vans"
+            className="mt-4 inline-block rounded-md bg-slate-900 px-6 py-3 text-white"
+          >
             Explore our vans
-          </button>
+          </Link>
         </div>
       </div>
     </div>

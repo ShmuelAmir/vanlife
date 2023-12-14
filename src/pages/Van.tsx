@@ -1,17 +1,24 @@
+import { useLoaderData, useLocation } from "react-router-dom";
 import clsx from "clsx";
 
-import useVan from "../api/useVan";
+import { Van } from "../types/Van";
+import getVan from "../api/getVan";
 import GoBack from "../components/GoBack";
 
-function VanPage() {
-  const { data: van, isLoading, isError } = useVan();
+export function loader({ params }: { params: { id: string } }) {
+  return getVan(params.id);
+}
 
-  if (isLoading) return <div className="text-center">Loading...</div>;
-  if (isError) return <div className="text-center">Error fetching van</div>;
+function VanPage() {
+  const location = useLocation();
+
+  const van = useLoaderData() as Van;
+
+  const search = location.state?.search || "";
 
   return (
     <div className="mx-auto max-w-sm px-7 py-14 md:max-w-4xl">
-      <GoBack />
+      <GoBack pathToNavigate={`..${search}`} />
       <div className="flex flex-col md:flex-row md:gap-16">
         <img
           src={van?.imageUrl}

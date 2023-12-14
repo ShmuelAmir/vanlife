@@ -1,12 +1,10 @@
-import useVan from "../api/useVan";
+import { useLoaderData } from "react-router-dom";
+
+import { Van } from "../types/Van";
 import ChipType from "../components/ChipType";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 function HostVanPreview() {
-  const { data: van, isLoading, isError } = useVan();
-
-  if (isLoading) return <LoadingSpinner />;
-  if (isError) return <p>Something went wrong</p>;
+  const van = useLoaderData() as Van;
 
   return (
     <div className="mb-5 mt-16 flex items-center gap-5">

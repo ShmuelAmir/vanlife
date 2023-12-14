@@ -1,11 +1,9 @@
-import useVan from "../api/useVan";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { useOutletContext } from "react-router-dom";
+
+import { Van } from "../types/Van";
 
 function Details() {
-  const { data: van, isLoading, isError } = useVan();
-
-  if (isLoading) return <LoadingSpinner />;
-  if (isError) return <p>Something went wrong</p>;
+  const van = useOutletContext() as Van;
 
   return (
     <div className="pt-6">

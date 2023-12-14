@@ -1,22 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom";
-
-import useHostVans from "../api/useHotsVans";
-import LoadingSpinner from "./LoadingSpinner";
+import { useLocation, useNavigate, useOutletContext } from "react-router-dom";
+import { Van } from "../types/Van";
 
 function SmallCardList() {
+  const vans = useOutletContext() as Van[];
+
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { data, isLoading, isError } = useHostVans();
-
-  if (isLoading) return <LoadingSpinner />;
-  if (isError) return <p>Something went wrong</p>;
 
   const isDashboard = location.pathname === "/host";
 
   return (
     <div className="flex flex-col gap-2">
-      {data?.map((van) => (
+      {vans?.map((van) => (
         <div
           key={van.id}
           onClick={() => navigate(`${isDashboard ? "vans/" : ""}${van.id}`)}
