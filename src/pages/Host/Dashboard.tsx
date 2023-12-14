@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Star from "../components/icons/Star";
-import SmallCardList from "../components/SmallCardList";
+import Star from "../../components/icons/Star";
+import SmallCardList from "../../components/SmallCardList";
 
 function Dashboard() {
   return (

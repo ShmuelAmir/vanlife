@@ -8,17 +8,17 @@ import {
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Vans, { loader as vansLoader } from "./pages/Vans";
-import Van, { loader as vanLoader } from "./pages/Van";
-import Host, { loader as hostVansloader } from "./pages/Host";
-import Dashboard from "./pages/Dashboard";
-import HostVans from "./pages/HostVans";
-import HostVan from "./pages/HostVan";
-import Details from "./pages/Details";
-import Pricing from "./pages/Pricing";
-import Photos from "./pages/Photos";
-import Reviews from "./pages/Reviews";
-import Income from "./pages/Income";
+import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
+import Van, { loader as vanLoader } from "./pages/Vans/Van";
+import Host, { loader as hostVansloader } from "./pages/Host/Host";
+import Dashboard from "./pages/Host/Dashboard";
+import HostVans from "./pages/Host/HostVans";
+import HostVan from "./pages/Host/HostVan";
+import Details from "./pages/Host/Details";
+import Pricing from "./pages/Host/Pricing";
+import Photos from "./pages/Host/Photos";
+import Reviews from "./pages/Host/Reviews";
+import Income from "./pages/Host/Income";
 import NotFound from "./pages/NotFound";
 import ErrorPage from "./pages/ErrorPage";
 

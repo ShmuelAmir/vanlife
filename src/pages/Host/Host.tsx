@@ -1,8 +1,8 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 
-import { Van } from "../types/Van";
-import getHostVans from "../api/getHotsVans";
-import Navigation from "../components/Navigation";
+import { Van } from "../../types/Van";
+import getHostVans from "../../api/getHotsVans";
+import Navigation from "../../components/Navigation";
 
 const hostPages = ["dashboard", "vans", "reviews", "income"];
 

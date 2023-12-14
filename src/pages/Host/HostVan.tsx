@@ -1,8 +1,8 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 
-import { Van } from "../types/Van";
-import Navigation from "../components/Navigation";
-import GoBack from "../components/GoBack";
+import { Van } from "../../types/Van";
+import Navigation from "../../components/Navigation";
+import GoBack from "../../components/GoBack";
 import HostVanPreview from "./HostVanPreview";
 
 const vanPages = ["details", "pricing", "photos"];

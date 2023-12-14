@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
-import { Van } from "../types/Van";
-import ChipType from "../components/ChipType";
+import { Van } from "../../types/Van";
+import ChipType from "../../components/ChipType";
 
 function HostVanPreview() {
   const van = useLoaderData() as Van;

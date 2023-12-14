@@ -1,4 +1,4 @@
-import SmallCardList from "../components/SmallCardList";
+import SmallCardList from "../../components/SmallCardList";
 
 function HostVans() {
   return (
