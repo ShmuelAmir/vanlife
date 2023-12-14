@@ -12,29 +12,31 @@ function Filters() {
   const type = params.get("type");
 
   return (
-    <div className="flex justify-between items-center mt-5 mb-12">
+    <div className="mb-12 mt-5 flex items-center justify-between">
       <div className="flex gap-5">
         {buttons.map((button) => (
           <button
             key={button.type}
             onClick={() => setParams({ type: button.type })}
             className={clsx(
-              "py-1 px-6 rounded-md hover:opacity-80 capitalize",
+              `rounded-md px-6 py-1 capitalize hover:opacity-80`,
               type === button.type
                 ? `bg-[${button.color}] text-white`
-                : "bg-slate-300 text-black"
+                : "bg-slate-300 text-black",
             )}
           >
             {button.type}
           </button>
         ))}
       </div>
-      <span
-        className="text-slate-500 underline cursor-pointer hover:text-slate-700"
-        onClick={() => setParams()}
-      >
-        Clear filters
-      </span>
+      {type && (
+        <span
+          className="cursor-pointer text-slate-500 underline hover:text-slate-700"
+          onClick={() => setParams()}
+        >
+          Clear filters
+        </span>
+      )}
     </div>
   );
 }

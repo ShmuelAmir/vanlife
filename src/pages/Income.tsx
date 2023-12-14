@@ -1,6 +1,6 @@
 function Income() {
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="mx-auto max-w-xl">
       <h1>Income</h1>
     </div>
   );

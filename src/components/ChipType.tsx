@@ -7,7 +7,7 @@ const typeColors = {
 function ChipType({ type = "simple" }: { type?: keyof typeof typeColors }) {
   return (
     <div
-      className={`py-1 px-4 rounded-md text-white capitalize w-fit mb-3 ${typeColors[type]}`}
+      className={`mb-3 w-fit rounded-md px-4 py-1 capitalize text-white ${typeColors[type]}`}
     >
       {type}
     </div>

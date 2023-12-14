@@ -14,6 +14,7 @@ import Pricing from "./pages/Pricing";
 import Photos from "./pages/Photos";
 import Reviews from "./pages/Reviews";
 import Income from "./pages/Income";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
             <Route path="income" element={<Income />} />
           </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

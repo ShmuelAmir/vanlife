@@ -9,7 +9,7 @@ function Navigation({
   indexPage: string;
 }) {
   return (
-    <ul className="flex gap-8 text-gray-500 max-w-xl mx-auto">
+    <ul className="mx-auto flex max-w-xl gap-8 text-gray-500">
       {pages.map((page) => (
         <NavLink
           key={page}
@@ -17,8 +17,8 @@ function Navigation({
           end={page === indexPage}
           className={({ isActive }) =>
             clsx(
-              "hover:text-black cursor-pointer hover:underline capitalize",
-              isActive && "text-black underline font-bold"
+              "cursor-pointer capitalize hover:text-black hover:underline",
+              isActive && "font-bold text-black underline",
             )
           }
         >

@@ -6,7 +6,7 @@ const hostPages = ["dashboard", "vans", "reviews", "income"];
 
 function Host() {
   return (
-    <div className="bg-[#FFF7ED] h-full p-8">
+    <div className="h-full bg-[#FFF7ED] p-8">
       <Navigation pages={hostPages} indexPage="dashboard" />
       <Outlet />
     </div>

@@ -4,9 +4,9 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-image h-full bg-cover bg-center text-white p-10 filter bg-slate-600">
-      <div className="max-w-xl mx-auto">
-        <h1 className="text-5xl font-bold mt-36 mb-8">
+    <div className="bg-image h-full bg-slate-600 bg-cover bg-center p-10 text-white filter">
+      <div className="mx-auto max-w-xl">
+        <h1 className="mb-8 mt-36 text-5xl font-bold">
           You got the travel plans, we got the travel vans.
         </h1>
         <p>
@@ -15,7 +15,7 @@ function Home() {
         </p>
         <button
           onClick={() => navigate("/vans")}
-          className="bg-[#FF8C38] w-full  p-2 rounded-md mt-20"
+          className="mt-20 w-full  rounded-md bg-[#FF8C38] p-2"
         >
           Find your van
         </button>

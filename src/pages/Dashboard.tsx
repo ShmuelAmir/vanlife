@@ -6,8 +6,8 @@ import SmallCardList from "../components/SmallCardList";
 function Dashboard() {
   return (
     <div className="pt-8">
-      <div className="p-8 bg-[#FFEAD0]  max-w-xl mx-auto">
-        <h2 className="font-bold text-2xl">Welcome!</h2>
+      <div className="mx-auto max-w-xl  bg-[#FFEAD0] p-8">
+        <h2 className="text-2xl font-bold">Welcome!</h2>
         <div className="flex justify-between">
           <p className="text-xs">
             Income last <span className="font-bold underline">30 days</span>
@@ -16,12 +16,12 @@ function Dashboard() {
             Details
           </Link>
         </div>
-        <p className="font-bold text-4xl">$2,260</p>
+        <p className="text-4xl font-bold">$2,260</p>
       </div>
-      <div className="px-8 py-6 bg-[#FFDDB2] flex justify-between max-w-xl mx-auto items-center">
+      <div className="mx-auto flex max-w-xl items-center justify-between bg-[#FFDDB2] px-8 py-6">
         <div className="flex gap-4">
           <p className="font-bold">Review score</p>
-          <p className="flex gap-1 items-center font-bold text-sm">
+          <p className="flex items-center gap-1 text-sm font-bold">
             <Star />
             <span>
               5.0<span className="text-gray-400">/5</span>
@@ -32,9 +32,9 @@ function Dashboard() {
           Details
         </Link>
       </div>
-      <div className="p-8 max-w-xl mx-auto">
-        <div className="flex justify-between mb-4 items-center">
-          <h3 className="font-bold text-lg">Your listed vans</h3>
+      <div className="mx-auto max-w-xl p-8">
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-lg font-bold">Your listed vans</h3>
           <Link to="vans" className="text-sm hover:underline">
             View all
           </Link>

@@ -7,19 +7,21 @@ function Card({ van }: { van: Van }) {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div
+      className="transition-all hover:scale-95"
+      onClick={() => navigate(`/vans/${van.id}`)}
+    >
       <img
-        onClick={() => navigate(`/vans/${van.id}`)}
-        className="rounded-md cursor-pointer hover:scale-95 transition-all"
+        className="cursor-pointer rounded-md"
         src={van.imageUrl}
         alt="van picture"
       />
       <div className="flex justify-between">
         <div className="flex flex-col items-start">
-          <h3 className="font-bold text-xl">{van.name}</h3>
+          <h3 className="text-xl font-bold">{van.name}</h3>
           <ChipType type={van.type} />
         </div>
-        <p className="text-right leading-3 mt-3">
+        <p className="mt-3 text-right leading-3">
           <span className="font-bold">${van.price}</span> <br />
           <span className="text-xs">/day</span>
         </p>

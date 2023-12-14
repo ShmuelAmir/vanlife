@@ -1,9 +1,10 @@
 import useVan from "../api/useVan";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Photos() {
   const { data: van, isLoading, isError } = useVan();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSpinner />;
   if (isError) return <p>Something went wrong</p>;
 
   return (

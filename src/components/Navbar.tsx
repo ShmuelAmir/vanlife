@@ -13,8 +13,8 @@ function Navbar() {
           to={page}
           className={({ isActive }) => {
             return clsx(
-              "hover:text-black hover:underline capitalize",
-              isActive && "text-black underline"
+              "capitalize hover:text-black hover:underline",
+              isActive && "text-black underline",
             );
           }}
         >

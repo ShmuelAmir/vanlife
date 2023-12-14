@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 import useHostVans from "../api/useHotsVans";
+import LoadingSpinner from "./LoadingSpinner";
 
 function SmallCardList() {
   const location = useLocation();
@@ -8,7 +9,7 @@ function SmallCardList() {
 
   const { data, isLoading, isError } = useHostVans();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSpinner />;
   if (isError) return <p>Something went wrong</p>;
 
   const isDashboard = location.pathname === "/host";
@@ -19,9 +20,9 @@ function SmallCardList() {
         <div
           key={van.id}
           onClick={() => navigate(`${isDashboard ? "vans/" : ""}${van.id}`)}
-          className="flex justify-between bg-white p-4 items-center rounded-md hover:bg-gray-100 cursor-pointer"
+          className="flex cursor-pointer items-center justify-between rounded-md bg-white p-4 hover:bg-gray-100"
         >
-          <div className="flex gap-3 items-center">
+          <div className="flex items-center gap-3">
             <img
               className="h-16 rounded-md"
               src={van.imageUrl}
