@@ -1,30 +1,12 @@
-import { useParams } from "react-router-dom";
 import clsx from "clsx";
 
-import { Van } from "../types/Van";
-import { useQuery } from "@tanstack/react-query";
+import useVan from "../api/useVan";
 
-export default function VanPage() {
-  const { id } = useParams();
+function VanPage() {
+  const { data: van, isLoading, isError } = useVan();
 
-  const {
-    data: van,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["vans", id],
-    queryFn: () =>
-      fetch(`/api/vans/${id}`)
-        .then((res) => res.json())
-        .then((data) => data.vans) as Promise<Van>,
-  });
-
-  if (isLoading) {
-    return <div className="text-center">Loading...</div>;
-  }
-  if (isError) {
-    return <div className="text-center">Error fetching van</div>;
-  }
+  if (isLoading) return <div className="text-center">Loading...</div>;
+  if (isError) return <div className="text-center">Error fetching van</div>;
 
   return (
     <div className="px-7 py-14 mx-auto max-w-sm md:max-w-4xl flex flex-col md:flex-row md:gap-16">
@@ -56,3 +38,5 @@ export default function VanPage() {
     </div>
   );
 }
+
+export default VanPage;

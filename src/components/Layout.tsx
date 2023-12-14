@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 
-const pages = ["about", "vans"];
+import Navbar from "./Navbar";
 
-export default function Layout() {
+function Layout() {
   return (
     <div className="flex flex-col h-full">
-      <header className="flex justify-between items-center p-4 bg-slate-200">
+      <header className="flex justify-between items-center p-4 bg-[#FFF7ED]">
         <Link to="/">
           <img
             src="/src/assets/logo.svg"
@@ -13,24 +13,16 @@ export default function Layout() {
             className="w-32 hover:scale-x-105 transition-all"
           />
         </Link>
-        <nav className="flex justify-between gap-3 font-bold">
-          {pages.map((page) => (
-            <Link
-              to={`/${page}`}
-              className="text-gray-500 hover:text-black hover:underline capitalize"
-              key={page}
-            >
-              {page}
-            </Link>
-          ))}
-        </nav>
+        <Navbar />
       </header>
       <main className="grow">
         <Outlet />
       </main>
-      <footer className="bg-gray-800 text-slate-300 p-4 text-center text-xs">
+      <footer className="bg-[#252525] text-[#AAA] p-4 text-center text-xs">
         Ⓒ 2022 #VANLIFE
       </footer>
     </div>
   );
 }
+
+export default Layout;
