@@ -1,5 +1,6 @@
-async function getHostVans() {
-  const res = await fetch(`/api/host/vans`);
+export async function getHostVans(id?: string) {
+  const url = id ? `/api/host/vans/${id}` : `/api/host/vans`;
+  const res = await fetch(url);
 
   if (!res.ok) {
     throw new Response("Failed to fetch vans", { status: res.status });
@@ -8,5 +9,3 @@ async function getHostVans() {
   const data = await res.json();
   return data.vans;
 }
-
-export default getHostVans;

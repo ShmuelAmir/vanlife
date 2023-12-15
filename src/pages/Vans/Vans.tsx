@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 
 import { Van } from "../../types/Van";
-import getVans from "../../api/getVans";
+import { getVans } from "../../api/getVans";
 import Card from "../../components/Card";
 import Filters from "../../components/Filters";
 
-export async function loader({ request }: { request: Request }) {
+export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const searchParams = new URLSearchParams(url.search);
   const type = searchParams.get("type");

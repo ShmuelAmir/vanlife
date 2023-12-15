@@ -1,12 +1,16 @@
-import { useLoaderData, useLocation } from "react-router-dom";
+import {
+  LoaderFunctionArgs,
+  useLoaderData,
+  useLocation,
+} from "react-router-dom";
 import clsx from "clsx";
 
 import { Van } from "../../types/Van";
-import getVan from "../../api/getVan";
+import { getVans } from "../../api/getVans";
 import GoBack from "../../components/GoBack";
 
-export function loader({ params }: { params: { id: string } }) {
-  return getVan(params.id);
+export function loader({ params }: LoaderFunctionArgs) {
+  return getVans(params.id);
 }
 
 function VanPage() {

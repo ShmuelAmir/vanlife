@@ -1,5 +1,6 @@
-async function getVans() {
-  const res = await fetch(`/api/vans`);
+export async function getVans(id?: string) {
+  const url = id ? `/api/vans/${id}` : `/api/vans`;
+  const res = await fetch(url);
 
   if (!res.ok) {
     throw new Response("Failed to fetch vans", { status: res.status });
@@ -8,5 +9,3 @@ async function getVans() {
   const data = await res.json();
   return data.vans;
 }
-
-export default getVans;

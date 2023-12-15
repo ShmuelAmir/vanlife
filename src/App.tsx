@@ -5,15 +5,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { requireAuth } from "./utils";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Login, {
+  loader as LoginLoader,
+  action as LoginAction,
+} from "./pages/Login";
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
 import Van, { loader as vanLoader } from "./pages/Vans/Van";
 import Host, { loader as hostVansloader } from "./pages/Host/Host";
 import Dashboard from "./pages/Host/Dashboard";
 import HostVans from "./pages/Host/HostVans";
-import HostVan from "./pages/Host/HostVan";
+import HostVan, { loader as vanHostLoader } from "./pages/Host/HostVan";
 import Details from "./pages/Host/Details";
 import Pricing from "./pages/Host/Pricing";
 import Photos from "./pages/Host/Photos";
@@ -27,6 +32,12 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route
+        path="login"
+        element={<Login />}
+        loader={LoginLoader}
+        action={LoginAction}
+      />
 
       <Route
         path="vans"
@@ -44,25 +55,61 @@ const router = createBrowserRouter(
       <Route
         path="host"
         element={<Host />}
-        loader={hostVansloader}
+        loader={async ({ request }) => {
+          await requireAuth(request);
+
+          return hostVansloader();
+        }}
         errorElement={<ErrorPage />}
       >
-        <Route index element={<Dashboard />} />
-        <Route path="vans" element={<HostVans />} />
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
+        <Route
+          path="vans"
+          element={<HostVans />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
 
         <Route
           path="vans/:id"
           element={<HostVan />}
-          loader={vanLoader}
+          loader={async (props) => {
+            await requireAuth(props.request);
+
+            return vanHostLoader(props);
+          }}
           errorElement={<ErrorPage />}
         >
-          <Route index element={<Details />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="photos" element={<Photos />} />
+          <Route
+            index
+            element={<Details />}
+            loader={async ({ request }) => await requireAuth(request)}
+          />
+          <Route
+            path="pricing"
+            element={<Pricing />}
+            loader={async ({ request }) => await requireAuth(request)}
+          />
+          <Route
+            path="photos"
+            element={<Photos />}
+            loader={async ({ request }) => await requireAuth(request)}
+          />
         </Route>
 
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="income" element={<Income />} />
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />

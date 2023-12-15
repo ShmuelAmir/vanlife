@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 
 import Navbar from "./Navbar";
+import LogoutButton from "./LogoutButton";
 
 function Layout() {
   return (
@@ -18,6 +19,7 @@ function Layout() {
       <main className="grow">
         <Outlet />
       </main>
+      <LogoutButton />
       <footer className="bg-[#252525] p-4 text-center text-xs text-[#AAA]">
         Ⓒ 2022 #VANLIFE
       </footer>
